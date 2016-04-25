@@ -38,7 +38,9 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         Class activitySwitch = null;
         switch (v.getId()) {
-
+            case R.id.dashboard_create_note:
+                activitySwitch = CreateNote.class;
+                break;
         }
         ActivityLauncher.runIntent(this, activitySwitch);
     }

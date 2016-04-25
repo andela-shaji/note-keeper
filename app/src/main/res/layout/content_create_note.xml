@@ -12,4 +12,29 @@
     tools:context="com.checkpoint.andela.notekeeper.activities.CreateNote"
     tools:showIn="@layout/activity_create_note">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/note_title"
+        android:maxLines="3"
+        android:textStyle="bold"
+        android:inputType="textCapSentences|textMultiLine"
+        android:imeOptions="actionDone"
+        android:id="@+id/note_title"/>
+
+    <com.checkpoint.andela.notekeeper.helpers.EditTextLined
+        android:id="@+id/note_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/note_title"
+        android:capitalize="sentences"
+        android:gravity="top"
+        android:hint="@string/note_content"
+        android:textStyle="normal"
+        android:inputType="textCapSentences|textNoSuggestions|textMultiLine"
+        android:imeOptions="actionDone"
+        android:scrollbars="vertical"
+        android:textSize="18dp"/>
+
+
 </RelativeLayout>
