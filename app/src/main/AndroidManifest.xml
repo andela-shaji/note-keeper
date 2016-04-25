@@ -21,6 +21,10 @@
         <activity
             android:name=".activities.DashBoard"
             android:label="@string/title_activity_dash_board"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.CreateNote"
+            android:label="@string/title_activity_create_note"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
