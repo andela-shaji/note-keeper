@@ -70,7 +70,6 @@ public class CreateNote extends AppCompatActivity {
     public void createNote() {
         EditText noteTitle = (EditText) findViewById(R.id.note_title);
         EditTextLined noteContent = (EditTextLined) findViewById(R.id.note_content);
-
         String note_title = noteTitle.getText().toString().trim();
         String note_content = noteContent.getText().toString().trim();
 
