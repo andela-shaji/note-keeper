@@ -9,11 +9,39 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.checkpoint.andela.notekeeper.WelcomeActivity"
+    tools:context=".activities.WelcomeActivity"
     tools:showIn="@layout/activity_welcome">
 
+    <ImageView
+        android:layout_width="281px"
+        android:layout_height="242px"
+        android:src="@drawable/notebook"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="180dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/imageView" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/notekeeper"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_marginTop="179dp"
+        android:id="@+id/imageView2" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/welcome_text"
+        android:layout_below="@+id/imageView"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center_horizontal"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:textColor="@color/colorPrimary"/>
 </RelativeLayout>
