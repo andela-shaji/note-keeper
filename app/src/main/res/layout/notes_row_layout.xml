@@ -25,7 +25,7 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textColor="@color/colorAccent"
-                android:textAppearance="?android:textAppearanceLarge"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="wrap_content"
