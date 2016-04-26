@@ -5,8 +5,8 @@
 
     <ListPreference
         android:title="Autosave Options"
-        android:summary="Select the kind of data that you would like to download"
-        android:key="autoSaveTime"
+        android:summary="%s"
+        android:key="seconds"
         android:defaultValue="2"
         android:entries="@array/listArray"
         android:entryValues="@array/listValues" />

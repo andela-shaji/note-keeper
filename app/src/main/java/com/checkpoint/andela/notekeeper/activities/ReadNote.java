@@ -94,7 +94,7 @@ public class ReadNote extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         ActivityLauncher.runIntent(ReadNote.this, DashBoard.class);
-        super.onBackPressed();
+        finish();
     }
 
 }

@@ -6,15 +6,19 @@
         <item
             android:id="@+id/nav_dashboard"
             android:icon="@drawable/home"
-            android:title="DashBoard"/>
+            android:title="@string/title_activity_dash_board"/>
         <item
             android:id="@+id/nav_notes"
             android:icon="@drawable/listnotes"
-            android:title="Notes"/>
+            android:title="@string/listnote"/>
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/settings_icon"
+            android:title="@string/action_settings"/>
         <item
             android:id="@+id/nav_trash_delete"
             android:icon="@drawable/delete"
-            android:title="Trash"/>
+            android:title="@string/trash_note"/>
     </group>
 
 </menu>

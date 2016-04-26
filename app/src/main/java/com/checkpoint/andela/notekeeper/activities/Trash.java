@@ -99,6 +99,9 @@ public class Trash extends ListNotes {
         } else if (id == R.id.nav_notes){
             ActivityLauncher.runIntent(this, ListNotes.class);
             finish();
+        }  else if (id == R.id.nav_settings) {
+            ActivityLauncher.runIntent(this, AppSettings.class);
+            finish();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.list_drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -208,7 +211,6 @@ public class Trash extends ListNotes {
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
             return false; // Return false if nothing is done
         }
-
 
         /**
          * Called when the user selects a contextual menu item

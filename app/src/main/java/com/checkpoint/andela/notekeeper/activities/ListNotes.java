@@ -118,7 +118,6 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
         });
     }
 
-
     /**
      * Enables the user to edit the note
      */
@@ -187,7 +186,7 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                Intent i = new Intent(this, CreateNote.class);
+                Intent i = new Intent(this, AppSettings.class);
                 startActivity(i);
                 return true;
             default:
@@ -242,8 +241,6 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
         navigationView.setItemIconTintList(null);
     }
 
-
-
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -252,6 +249,9 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
             finish();
         } else if (id == R.id.nav_trash_delete) {
             ActivityLauncher.runIntent(this, Trash.class);
+            finish();
+        }  else if (id == R.id.nav_settings) {
+            ActivityLauncher.runIntent(this, AppSettings.class);
             finish();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.list_drawer_layout);
@@ -321,6 +321,6 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
     @Override
     public void onBackPressed() {
         ActivityLauncher.runIntent(ListNotes.this, DashBoard.class);
-        super.onBackPressed();
+        finish();
     }
 }
