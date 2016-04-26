@@ -29,7 +29,11 @@
         <activity
             android:name=".activities.ListNotes"
             android:label="@string/title_activity_list_notes"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.ReadNote"
+            android:label="@string/title_activity_read_note"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

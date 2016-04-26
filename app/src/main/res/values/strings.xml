@@ -22,9 +22,7 @@
     <string name="edit_note">Edit</string>
     <string name="title_activity_list_notes">ListNotes</string>
     <string name="search">Search</string>
-
-
-
+    <string name="title_activity_read_note">ReadNote</string>
 
 
 </resources>

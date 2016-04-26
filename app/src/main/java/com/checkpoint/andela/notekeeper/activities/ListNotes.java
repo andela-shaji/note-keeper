@@ -226,7 +226,8 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        NoteModel noteModel = listNoteAdapter.getItem(position);
+        ActivityLauncher.eventIntent(this, ReadNote.class, noteModel);
     }
 
     private void setUpNavigationDrawer() {
@@ -290,7 +291,7 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.nav_edit:
-                   // editNote();
+                    editNote();
                     mode.finish();
                     return true;
                 case R.id.nav_share:
