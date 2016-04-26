@@ -251,7 +251,7 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
             ActivityLauncher.runIntent(this, DashBoard.class);
             finish();
         } else if (id == R.id.nav_trash) {
-           // ActivityLauncher.runIntent(this, TrashNote.class);
+            ActivityLauncher.runIntent(this, Trash.class);
             finish();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.list_drawer_layout);
@@ -299,8 +299,8 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
                     mode.finish();
                     return true;
                 case R.id.nav_trash:
-                    //moveNote(noteModelArrayList, listNoteAdapter, "yes", notePosition);
-                    //Toast.makeText(ListNotes.this, "Note moved to trash", Toast.LENGTH_LONG).show();
+                    moveNote(noteModelArrayList, listNoteAdapter, "yes", notePosition);
+                    Toast.makeText(ListNotes.this, "Note moved to trash", Toast.LENGTH_LONG).show();
                     mode.finish();
                     return true;
                 default:
