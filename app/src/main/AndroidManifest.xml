@@ -33,6 +33,10 @@
         <activity
             android:name=".activities.ReadNote"
             android:label="@string/title_activity_read_note"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.Trash"
+            android:label="@string/title_activity_trash"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
