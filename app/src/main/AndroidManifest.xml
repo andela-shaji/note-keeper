@@ -25,19 +25,35 @@
         <activity
             android:name=".activities.CreateNote"
             android:label="@string/title_activity_create_note"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".activities.ListNotes" />
+        </activity>
         <activity
             android:name=".activities.ListNotes"
             android:label="@string/title_activity_list_notes"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.DashBoard" />
+            </activity>
         <activity
             android:name=".activities.ReadNote"
             android:label="@string/title_activity_read_note"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".activities.ListNotes" />
+        </activity>
         <activity
             android:name=".activities.Trash"
             android:label="@string/title_activity_trash"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.DashBoard" />
+        </activity>
     </application>
 
 </manifest>

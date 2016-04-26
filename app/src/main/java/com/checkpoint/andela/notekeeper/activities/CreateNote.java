@@ -59,7 +59,7 @@ public class CreateNote extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createNote();
-                Intent intent = new Intent(CreateNote.this, DashBoard.class);
+                Intent intent = new Intent(CreateNote.this, ListNotes.class);
                 finish();
                 startActivity(intent);
             }

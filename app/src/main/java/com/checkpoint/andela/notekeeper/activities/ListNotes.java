@@ -177,8 +177,8 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.list_notes_menu, menu);
-         MenuItem item = menu.findItem(R.id.action_search);
-         SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+        final MenuItem item = menu.findItem(R.id.action_search);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
         searchView.setOnQueryTextListener(this);
         return true;
     }
@@ -205,8 +205,8 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
         search = search.toLowerCase();
         final ArrayList<NoteModel> filteredSearch = new ArrayList<>();
         for (NoteModel noteModel: noteModelArrayList) {
-            String note_title = noteModel.getNote_title().toLowerCase();
-            String note_content = noteModel.getNote_content().toLowerCase();
+            final String note_title = noteModel.getNote_title().toLowerCase();
+            final String note_content = noteModel.getNote_content().toLowerCase();
             if (note_title.contains(search) | note_content.contains(search)) {
                 filteredSearch.add(noteModel);
             }
@@ -268,6 +268,7 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
 
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+            mode.setTitle("Options");
             // Inflate a menu resource providing context menu items
             MenuInflater inflater = mode.getMenuInflater();
             inflater.inflate(R.menu.create_note_menu, menu);
@@ -316,4 +317,10 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
             mActionMode = null;
         }
     };
+
+    @Override
+    public void onBackPressed() {
+        ActivityLauncher.runIntent(ListNotes.this, DashBoard.class);
+        super.onBackPressed();
+    }
 }

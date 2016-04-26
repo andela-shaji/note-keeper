@@ -10,7 +10,7 @@
             app:showAsAction="ifRoom"/>
         <item
             android:id="@+id/trash_popup"
-            android:icon="@drawable/delete_black"
+            android:icon="@drawable/delete_icon"
             android:title="Delete"
             app:showAsAction="ifRoom"/>
     </group>

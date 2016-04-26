@@ -7,7 +7,7 @@
         app:showAsAction="always"/>
     <item
         android:id="@+id/trash"
-        android:icon="@drawable/delete_white"
+        android:icon="@drawable/delete_icon"
         android:title="@string/edit_note"
         app:showAsAction="ifRoom"/>
 </menu>
