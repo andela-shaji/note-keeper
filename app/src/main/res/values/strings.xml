@@ -20,10 +20,15 @@
     <string name="share_note">Share</string>
     <string name="delete_note">Delete</string>
     <string name="edit_note">Edit</string>
+    <string name="listnote">Notes</string>
     <string name="title_activity_list_notes">ListNotes</string>
     <string name="search">Search</string>
     <string name="title_activity_read_note">ReadNote</string>
     <string name="title_activity_trash">Trash</string>
+    <string name="title_activity_app_settings">AppSettings</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <string name="trash_note">Trash</string>
 
 
 </resources>

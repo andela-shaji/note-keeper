@@ -59,7 +59,7 @@ public class CreateNote extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createNote();
-                Intent intent = new Intent(CreateNote.this, DashBoard.class);
+                Intent intent = new Intent(CreateNote.this, ListNotes.class);
                 finish();
                 startActivity(intent);
             }
@@ -103,10 +103,10 @@ public class CreateNote extends AppCompatActivity {
         }
     }
 
-    private int getUserTime() {
+    private int getAutoSaveTime() {
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String downloadType = SP.getString("downloadType", "2");
-        return parseInt(downloadType);
+        String seconds = SP.getString("seconds", "2");
+        return parseInt(seconds);
     }
 
     Handler handler = new Handler();
@@ -114,7 +114,8 @@ public class CreateNote extends AppCompatActivity {
         @Override
         public void run() {
             createNote();
-            handler.postDelayed(this, 1000 * getUserTime());
+            // Schedule the first execution
+            handler.postDelayed(this, 1000 * getAutoSaveTime());
         }
     };
 

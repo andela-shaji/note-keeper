@@ -47,8 +47,12 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
             case R.id.dashboard_trash_note:
                 activitySwitch = Trash.class;
                 break;
+            case R.id.dashboard_settings_note:
+                activitySwitch = AppSettings.class;
+                break;
         }
         ActivityLauncher.runIntent(this, activitySwitch);
+        finish();
     }
 
     private static long back_pressed;
