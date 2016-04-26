@@ -21,6 +21,7 @@
     <string name="delete_note">Delete</string>
     <string name="edit_note">Edit</string>
     <string name="title_activity_list_notes">ListNotes</string>
+    <string name="search">Search</string>
 
 
 
