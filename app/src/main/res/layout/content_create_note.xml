@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.checkpoint.andela.notekeeper.activities.CreateNote"
+    tools:context="com.checkpoint.android.notekeeper.activities.CreateNote"
     tools:showIn="@layout/activity_create_note">
 
     <EditText
@@ -35,6 +35,5 @@
         android:imeOptions="actionDone"
         android:scrollbars="vertical"
         android:textSize="18dp"/>
-
 
 </RelativeLayout>
