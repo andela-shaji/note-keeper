@@ -18,4 +18,6 @@
             android:title="@string/delete_note"
             app:showAsAction="ifRoom"/>
     </group>
+
+
 </menu>
