@@ -250,7 +250,7 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
         if (id == R.id.nav_dashboard) {
             ActivityLauncher.runIntent(this, DashBoard.class);
             finish();
-        } else if (id == R.id.nav_trash) {
+        } else if (id == R.id.nav_trash_delete) {
             ActivityLauncher.runIntent(this, Trash.class);
             finish();
         }

@@ -6,18 +6,23 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.checkpoint.andela.notekeeper.R;
 import com.checkpoint.andela.notekeeper.adapter.ListNoteAdapter;
 import com.checkpoint.andela.notekeeper.helpers.ActivityLauncher;
 import com.checkpoint.andela.notekeeper.model.NoteModel;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class Trash extends ListNotes {
@@ -89,8 +94,46 @@ public class Trash extends ListNotes {
     }
 
     @Override
-    public void onBackPressed() {
-        ActivityLauncher.runIntent(this, DashBoard.class);
-        finish();
+    public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+        PopupMenu popup = new PopupMenu(this, view);
+        popup.inflate(R.menu.menu_trash_popup);
+
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.restore_pop:
+                        moveNote(noteModelArrayList, listNoteAdapter, "no", position);
+                        Toast.makeText(Trash.this, "Note restored", Toast.LENGTH_LONG).show();
+                        return true;
+                    case R.id.trash_popup:
+                        removeOneNote(noteModelArrayList, listNoteAdapter, position);
+                        Toast.makeText(Trash.this, "Note deleted", Toast.LENGTH_LONG).show();
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+        if (showIcons(popup)) {
+            return;
+        }
+        popup.show();
+    }
+
+    private boolean showIcons(PopupMenu popup) {
+        Object menuHelper;
+        Class[] argTypes;
+        try {
+            Field fMenuHelper = PopupMenu.class.getDeclaredField("mPopup");
+            fMenuHelper.setAccessible(true);
+            menuHelper = fMenuHelper.get(popup);
+            argTypes = new Class[] { boolean.class };
+            menuHelper.getClass().getDeclaredMethod("setForceShowIcon", argTypes).invoke(menuHelper, true);
+        } catch (Exception e) {
+            Log.w("POPUP", "error forcing menu icons to show", e);
+            popup.show();
+            return true;
+        }
+        return false;
     }
 }
