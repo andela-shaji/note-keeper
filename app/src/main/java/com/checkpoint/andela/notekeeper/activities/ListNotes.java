@@ -138,7 +138,7 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
         Intent mail = new Intent(Intent.ACTION_SEND);
         mail.putExtra(Intent.EXTRA_SUBJECT, " " + noteModel.getNote_title());
         mail.putExtra(Intent.EXTRA_TEXT, noteModel.getNote_content());
-        // This is needed to prompt email client only
+        //This is needed to prompt email client only
         mail.setType("message/rfc822");
         startActivity(Intent.createChooser(mail, "Send note"));
     }
