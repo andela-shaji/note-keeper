@@ -145,6 +145,60 @@ public class Trash extends ListNotes {
         return false;
     }
 
+    public class DeleteNoteDialogue extends DialogFragment{
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            AlertDialog.Builder deleteNote = new AlertDialog.Builder(getActivity());
+            deleteNote.setMessage("Are you sure you want to delete all the notes in the trash?")
+                    .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            removeAllNotes("yes");
+                        }
+                    })
+                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dismiss();
+                        }
+                    });
+            return deleteNote.create();
+        }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_trash, menu);
+       /* final MenuItem item = menu.findItem(R.id.action_search);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+        searchView.setOnQueryTextListener(this);*/
+        return true;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String query) {
+        final ArrayList<NoteModel> noteFilter = filterSearch(noteModelArrayList, query);
+        listNoteAdapter = new ListNoteAdapter(this, noteFilter);
+        listView.setAdapter(listNoteAdapter);
+        listNoteAdapter.notifyDataSetChanged();
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.trash) {
+            DeleteNoteDialogue td = new DeleteNoteDialogue();
+            FragmentManager fm = getSupportFragmentManager();
+            td.show(fm, "Empty Trash");
+            listNoteAdapter.notifyDataSetChanged();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
     @Override
     public void onBackPressed() {
         ActivityLauncher.runIntent(this, DashBoard.class);
