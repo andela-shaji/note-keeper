@@ -118,63 +118,6 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
         });
     }
 
-    //CONTEXTUAL ACTION CALLBACK
-    private ActionMode.Callback mActionModeCallback = new ActionMode.Callback() {
-
-        /**
-         * Called when the action mode is created; startActionMode() was called
-         */
-
-        @Override
-        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-            // Inflate a menu resource providing context menu items
-            MenuInflater inflater = mode.getMenuInflater();
-            inflater.inflate(R.menu.create_note_menu, menu);
-            return true;
-        }
-
-        /**
-         * Called each time the action mode is shown.
-         */
-
-        @Override
-        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-            return false; // Return false if nothing is done
-        }
-
-
-        /**
-         * Called when the user selects a contextual menu item
-         */
-        @Override
-        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.nav_edit:
-                    editNote();
-                    mode.finish();
-                    return true;
-                case R.id.nav_share:
-                    shareNote();
-                    mode.finish();
-                    return true;
-                case R.id.nav_trash:
-                    moveNote(noteModelArrayList, listNoteAdapter, "yes", notePosition);
-                    Toast.makeText(ListNotes.this, "Note moved to trash", Toast.LENGTH_LONG).show();
-                    mode.finish();
-                    return true;
-                default:
-                    return false;
-            }
-        }
-
-        /**
-         * Called when the user exits the action mode
-         */
-        @Override
-        public void onDestroyActionMode(ActionMode mode) {
-            mActionMode = null;
-        }
-    };
 
     /**
      * Enables the user to edit the note
@@ -314,4 +257,62 @@ public class ListNotes extends AppCompatActivity implements AdapterView.OnItemCl
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    //CONTEXTUAL ACTION CALLBACK
+    private ActionMode.Callback mActionModeCallback = new ActionMode.Callback() {
+
+        /**
+         * Called when the action mode is created; startActionMode() was called
+         */
+
+        @Override
+        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+            // Inflate a menu resource providing context menu items
+            MenuInflater inflater = mode.getMenuInflater();
+            inflater.inflate(R.menu.create_note_menu, menu);
+            return true;
+        }
+
+        /**
+         * Called each time the action mode is shown.
+         */
+
+        @Override
+        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+            return false; // Return false if nothing is done
+        }
+
+
+        /**
+         * Called when the user selects a contextual menu item
+         */
+        @Override
+        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.nav_edit:
+                   // editNote();
+                    mode.finish();
+                    return true;
+                case R.id.nav_share:
+                    shareNote();
+                    mode.finish();
+                    return true;
+                case R.id.nav_trash:
+                    //moveNote(noteModelArrayList, listNoteAdapter, "yes", notePosition);
+                    //Toast.makeText(ListNotes.this, "Note moved to trash", Toast.LENGTH_LONG).show();
+                    mode.finish();
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        /**
+         * Called when the user exits the action mode
+         */
+        @Override
+        public void onDestroyActionMode(ActionMode mode) {
+            mActionMode = null;
+        }
+    };
 }
