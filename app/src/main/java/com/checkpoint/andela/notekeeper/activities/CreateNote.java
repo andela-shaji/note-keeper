@@ -73,11 +73,12 @@ public class CreateNote extends AppCompatActivity {
         String note_title = noteTitle.getText().toString().trim();
         String note_content = noteContent.getText().toString().trim();
 
-        if ((note_title.matches("")) && note_content.matches("")) {
-            return;
-        } else if (note_title.matches("") && note_content.contains(" ")) {
+
+        if (note_title.matches("") && note_content.contains(" ")) {
             note.setNote_title(note_content.substring(0, note_content.indexOf(" ")));
-        } else {
+        } else if ((note_title.matches("")) && note_content.matches("")) {
+            return;
+        }  else {
             note.setNote_title(note_title);
         }
         note.setNote_content(note_content);
