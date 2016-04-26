@@ -24,6 +24,7 @@
     <string name="search">Search</string>
     <string name="title_activity_read_note">ReadNote</string>
     <string name="title_activity_trash">Trash</string>
+    <string name="title_activity_app_settings">AppSettings</string>
 
 
 </resources>
