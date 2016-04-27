@@ -60,7 +60,7 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onBackPressed() {
         if (back_pressed + 2000 > System.currentTimeMillis()) {
-            super.onBackPressed();
+            moveTaskToBack(true);
         } else {
             Toast.makeText(getBaseContext(), "Press once again to exit", Toast.LENGTH_SHORT).show();
             back_pressed = System.currentTimeMillis();
