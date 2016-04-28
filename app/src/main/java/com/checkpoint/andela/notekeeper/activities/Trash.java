@@ -132,7 +132,7 @@ public class Trash extends ListNotes {
 
     }
 
-    public class DeleteNoteDialogue extends DialogFragment{
+    private class DeleteNoteDialogue extends DialogFragment{
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             AlertDialog.Builder deleteNote = new AlertDialog.Builder(getActivity());

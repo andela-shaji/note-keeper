@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertTrue;
-import static org.junit.Assert.*;
 
 @Config(constants = BuildConfig.class, sdk = Build.VERSION_CODES.LOLLIPOP)
 @RunWith(RobolectricGradleTestRunner.class)
@@ -93,4 +92,5 @@ public class ListNotesTest {
         MenuItem menuItem3 = new RoboMenuItem(R.id.nav_settings);
         assertEquals(listNotesActivity.onNavigationItemSelected(menuItem3), true);
     }
+
 }

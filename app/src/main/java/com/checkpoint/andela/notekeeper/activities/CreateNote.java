@@ -36,7 +36,7 @@ public class CreateNote extends AppCompatActivity {
         autoSave();
     }
 
-    public void manageToolbar() {
+    private void manageToolbar() {
         toolbar = (Toolbar) findViewById(R.id.create_note_toolbar);
         setSupportActionBar(toolbar);
         setTitle("New Note");
@@ -48,7 +48,7 @@ public class CreateNote extends AppCompatActivity {
         }
     }
 
-    public void initialize() {
+    private void initialize() {
 
         noteDbHelper = new NoteDbHelper(this);
         database = noteDbHelper.getWritableDatabase();
@@ -67,7 +67,7 @@ public class CreateNote extends AppCompatActivity {
         updateNotes();
     }
 
-    public void createNote() {
+    private void createNote() {
         EditText noteTitle = (EditText) findViewById(R.id.note_title);
         EditTextLined noteContent = (EditTextLined) findViewById(R.id.note_content);
         String note_title = noteTitle.getText().toString().trim();
@@ -85,12 +85,12 @@ public class CreateNote extends AppCompatActivity {
         insertNote(note);
     }
 
-    public boolean insertNote(NoteModel noteModel) {
+    private boolean insertNote(NoteModel noteModel) {
         cupboard().withDatabase(database).put(noteModel);
         return true;
     }
 
-    public void updateNotes() {
+    private void updateNotes() {
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
             note = intent.getParcelableExtra("UPDATE");
@@ -119,7 +119,7 @@ public class CreateNote extends AppCompatActivity {
         }
     };
 
-    public void autoSave() {
+    private void autoSave() {
         final EditText title = (EditText) findViewById(R.id.note_title);
         final EditText content = (EditText) findViewById(R.id.note_content);
         title.setOnFocusChangeListener(new View.OnFocusChangeListener() {
