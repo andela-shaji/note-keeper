@@ -27,7 +27,7 @@ import static org.hamcrest.Matchers.allOf;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class ListNotesTest{
+public class CreateAndListNotesTest {
     @Rule
     public ActivityTestRule rule1 = new ActivityTestRule(ListNotes.class);
 

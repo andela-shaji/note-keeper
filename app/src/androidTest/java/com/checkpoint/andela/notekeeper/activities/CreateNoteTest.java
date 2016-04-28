@@ -17,13 +17,14 @@ import org.junit.runner.RunWith;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withParent;
-import static java.util.regex.Pattern.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.Matchers.allOf;
 
@@ -42,8 +43,8 @@ public class CreateNoteTest {
         Intents.init();
         String title = "Lorem Ipsum";
         String content = "Lorem ipsum dolor sit amet";
-        onView(withId(R.id.note_title)).perform(typeText(title));
-        onView(withId(R.id.note_content)).perform(typeText(content));
+        onView(withId(R.id.note_title)).perform(typeText(title)).check(matches(withText(title)));
+        onView(withId(R.id.note_content)).perform(typeText(content)).check(matches(withText(content)));
         onView(allOf(instanceOf(ImageButton.class), withParent(withId(R.id.create_note_toolbar)))).perform(click());
         intended(hasComponent(ListNotes.class.getCanonicalName()));
         Intents.release();

@@ -30,7 +30,7 @@ import static org.junit.Assert.*;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class DashBoardTest {
+public class AdashBoardTest {
 
     @Rule
     public ActivityTestRule rule1 = new ActivityTestRule(DashBoard.class);
