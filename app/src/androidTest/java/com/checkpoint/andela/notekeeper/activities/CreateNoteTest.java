@@ -1,6 +1,7 @@
 package com.checkpoint.andela.notekeeper.activities;
 
 import android.content.Intent;
+import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -14,18 +15,23 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withParent;
+import static java.util.regex.Pattern.matches;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.Matchers.allOf;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class CreateNoteTest {
+
+
 
     @Rule
     public ActivityTestRule rule
@@ -40,6 +46,7 @@ public class CreateNoteTest {
         onView(withId(R.id.note_content)).perform(typeText(content));
         onView(allOf(instanceOf(ImageButton.class), withParent(withId(R.id.create_note_toolbar)))).perform(click());
         intended(hasComponent(ListNotes.class.getCanonicalName()));
+        pressBack();
         Intents.release();
     }
 }
