@@ -46,7 +46,6 @@ public class CreateNoteTest {
         onView(withId(R.id.note_content)).perform(typeText(content));
         onView(allOf(instanceOf(ImageButton.class), withParent(withId(R.id.create_note_toolbar)))).perform(click());
         intended(hasComponent(ListNotes.class.getCanonicalName()));
-        pressBack();
         Intents.release();
     }
 }
