@@ -22,8 +22,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
 
     public NoteDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        Log.e("DATABASE OPERATIONS", "Database created or opened... ");
-    }
+        }
 
     static {
         /**
@@ -40,7 +39,6 @@ public class NoteDbHelper extends SQLiteOpenHelper {
          */
         cupboard().withDatabase(db).createTables();
     }
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
