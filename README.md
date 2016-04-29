@@ -10,6 +10,8 @@ NoteKeeper is fast, easy, beautiful and accessible at any time. This is what you
 
 <img src="/app/src/main/res/drawable/screenshots/device-2016-04-29-120050.png" height="30%" width="30%"> <img src="/app/src/main/res/drawable/screenshots/dashboard.png" height="30%" width="30%"> <img src="/app/src/main/res/drawable/screenshots/createnote.png" height="30%" width="30%"> 
 
+<img src="/app/src/main/res/drawable/screenshots/listnotes.png" height="30%" width="30%"> <img src="/app/src/main/res/drawable/screenshots/drawernavigation.png" height="30%" width="30%"> <img src="/app/src/main/res/drawable/screenshots/device-2016-04-29-120050.png" height="30%" width="30%">   
+
 ###
 
 ### Platform
