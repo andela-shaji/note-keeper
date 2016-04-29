@@ -15,7 +15,6 @@ public class NoteModel implements Parcelable {
     private String note_title;
     private String note_content;
     private String note_date;
-    private String note_time;
     private String note_trashed = null;
 
     public NoteModel() {
