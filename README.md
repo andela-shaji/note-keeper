@@ -8,8 +8,7 @@ NoteKeeper is fast, easy, beautiful and accessible at any time. This is what you
 
 ###
 
-![SplashScreen](https://github.com/andela-shaji/note-keeper/tree/staging/app/src/main/res/drawable/screenshots/device-2016-04-29-120050.png)
-![Alt text](https://github.com/andela-shaji/note-keeper/tree/staging/app/src/main/res/drawable/screenshots/createnote.png?raw=true "NoteKeeper")      |
+<img src="/app/src/main/res/drawable/screenshots/device-2016-04-29-120050.png" height="30%" width="30%"> <img src="/app/src/main/res/drawable/screenshots/dashboard.png" height="30%" width="30%"> <img src="/app/src/main/res/drawable/screenshots/createnote.png" height="30%" width="30%"> 
 
 ###
 
