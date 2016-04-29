@@ -7,7 +7,7 @@ It serves as a simple word processing program, the text option allows for as man
 NoteKeeper is fast, easy, beautiful and accessible at any time. This is what you need.
 
 ###
-![Alt text](https://github.com/andela-shaji/note-keeper/tree/staging/app/src/main/res/drawable/screenshots?raw=true "NoteKeeper")      |
+![Alt text](https://github.com/andela-shaji/note-keeper/tree/staging/app/src/main/res/drawable/screenshots/createnote.png?raw=true "NoteKeeper")      |
 
 ###
 
