@@ -4,7 +4,6 @@ import android.os.Build;
 import android.view.View;
 
 import com.checkpoint.andela.notekeeper.BuildConfig;
-import com.checkpoint.andela.notekeeper.R;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,29 +20,24 @@ import static junit.framework.Assert.assertTrue;
 
 @Config(constants = BuildConfig.class, sdk = Build.VERSION_CODES.LOLLIPOP)
 @RunWith(RobolectricGradleTestRunner.class)
-public class CreateNoteTest {
-    private CreateNote createNoteActivity;
-
-
+public class AppSettingsTest {
+    private AppSettings settings;
 
     @Before
     public void setUp() throws Exception {
-        createNoteActivity = Robolectric.buildActivity(CreateNote.class).create().get();
-
+        settings = Robolectric.buildActivity(AppSettings.class).create().get();
     }
 
     @Test
-    public void testOnCreate() throws Exception {
-        View view = createNoteActivity.findViewById(R.id.create_note_layout);
+    public void testOnPostCreate() throws Exception {
+        View view = settings.findViewById(android.R.id.list);
         assertNotNull(view);
     }
 
     @Test
-    public void testCreateNote() throws Exception {
-        ShadowActivity activityShadow = Shadows.shadowOf(createNoteActivity);
-        activityShadow.onBackPressed();
-        assertTrue(activityShadow.isFinishing());
+    public void testOnBackPressed() throws Exception {
+        ShadowActivity shadowActivity = Shadows.shadowOf(settings);
+        shadowActivity.onBackPressed();
+        assertTrue(shadowActivity.isFinishing());
     }
-
-
 }

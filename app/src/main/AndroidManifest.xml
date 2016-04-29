@@ -57,11 +57,12 @@
         <activity
             android:name=".activities.AppSettings"
             android:label="@string/title_activity_app_settings"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activities.SettingsActivity"
-            android:label="@string/title_activity_settings"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.DashBoard" />
+        </activity>
+
     </application>
 
 </manifest>

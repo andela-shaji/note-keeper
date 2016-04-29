@@ -1,6 +1,5 @@
 package com.checkpoint.andela.notekeeper.activities;
 
-import android.app.Application;
 import android.content.Intent;
 import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
@@ -81,7 +80,6 @@ public class ListNotesTest {
         Intent expectedIntent = new Intent(listNotesActivity, AppSettings.class);
         assertTrue(shadowActivity.getNextStartedActivity().equals(expectedIntent));
     }
-
 
     @Test
     public void testOnNavigationItemSelected() throws Exception {
