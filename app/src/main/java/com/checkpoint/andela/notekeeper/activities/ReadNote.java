@@ -93,7 +93,7 @@ public class ReadNote extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        ActivityLauncher.runIntent(ReadNote.this, DashBoard.class);
+        ActivityLauncher.runIntent(ReadNote.this, ListNotes.class);
         finish();
     }
 

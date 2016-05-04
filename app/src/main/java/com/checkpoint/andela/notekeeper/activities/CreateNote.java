@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.checkpoint.andela.notekeeper.R;
+import com.checkpoint.andela.notekeeper.helpers.ActivityLauncher;
 import com.checkpoint.andela.notekeeper.helpers.EditTextLined;
 import com.checkpoint.andela.notekeeper.helpers.NoteDbHelper;
 import com.checkpoint.andela.notekeeper.model.NoteModel;
@@ -59,9 +60,8 @@ public class CreateNote extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createNote();
-                Intent intent = new Intent(CreateNote.this, ListNotes.class);
+                ActivityLauncher.runIntent(CreateNote.this, ListNotes.class);
                 finish();
-                startActivity(intent);
             }
         });
         updateNotes();

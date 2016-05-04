@@ -35,18 +35,12 @@ public class AdashBoardTest {
     @Rule
     public ActivityTestRule rule1 = new ActivityTestRule(DashBoard.class);
 
-    @Before
-    public void setUp() throws Exception {
-        Thread.sleep(2000);
-    }
-
     @Test
     public void testCreateNoteOnClick() throws Exception {
         Intents.init();
         onView(withId(R.id.dashboard_create_note)).perform(click());
         intended(hasComponent(CreateNote.class.getCanonicalName()));
         Intents.release();
-        Thread.sleep(2000);
     }
 
     @Test
@@ -55,7 +49,6 @@ public class AdashBoardTest {
         onView(withId(R.id.dashboard_settings_note)).perform(click());
         intended(hasComponent(AppSettings.class.getCanonicalName()));
         Intents.release();
-        Thread.sleep(2000);
     }
 
     @Test
@@ -64,9 +57,5 @@ public class AdashBoardTest {
         onView(withId(R.id.dashboard_list_notes)).perform(click());
         intended(hasComponent(ListNotes.class.getCanonicalName()));
         Intents.release();
-        Thread.sleep(2000);
     }
-
-
-
 }

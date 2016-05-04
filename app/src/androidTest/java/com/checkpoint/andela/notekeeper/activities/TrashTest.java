@@ -26,11 +26,6 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 @LargeTest
 public class TrashTest {
 
-    @Before
-    public void setUp() throws Exception {
-        Thread.sleep(2000);
-    }
-
     @Rule
     public ActivityTestRule rule1 = new ActivityTestRule(Trash.class);
     @Test
