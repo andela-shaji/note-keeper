@@ -56,8 +56,8 @@ public class Trash extends ListNotes {
         listNoteAdapter = new ListNoteAdapter(this, noteModelArrayList);
         listView = (ListView) findViewById(R.id.listview_note);
         listView.setAdapter(listNoteAdapter);
-        listView.setItemsCanFocus(false);
-        listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        listView.setItemsCanFocus(true);
+        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         listView.setOnItemClickListener(this);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_list);
         fab.setVisibility(fab.INVISIBLE);

@@ -47,13 +47,13 @@ public class AppSettings extends PreferenceActivity {
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         getDelegate().onPostCreate(savedInstanceState);
-        LinearLayout parent = (LinearLayout) findViewById(android.R.id.list)
+        LinearLayout linearLayout = (LinearLayout) findViewById(android.R.id.list)
                 .getParent().getParent().getParent();
         Toolbar toolbar = (Toolbar) LayoutInflater.from(this)
-                .inflate(R.layout.settings_toolbar, parent, false);
+                .inflate(R.layout.settings_toolbar, linearLayout, false);
 
         toolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
-        parent.addView(toolbar, 0);
+        linearLayout.addView(toolbar, 0);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,6 +98,4 @@ public class AppSettings extends PreferenceActivity {
         ActivityLauncher.runIntent(this, DashBoard.class);
         finish();
     }
-
-
 }

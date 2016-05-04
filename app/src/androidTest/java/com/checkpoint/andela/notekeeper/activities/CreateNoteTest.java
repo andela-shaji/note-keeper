@@ -41,8 +41,8 @@ public class CreateNoteTest {
     @Test
     public void testCreateNote() throws Exception {
         Intents.init();
-        String title = "Lorem Ipsum";
-        String content = "Lorem ipsum dolor sit amet";
+        String title = "Note Keeper";
+        String content = "It is a new, comfortable and simple notepad right on your Android.";
         onView(withId(R.id.note_title)).perform(typeText(title)).check(matches(withText(title)));
         onView(withId(R.id.note_content)).perform(typeText(content)).check(matches(withText(content)));
         onView(allOf(instanceOf(ImageButton.class), withParent(withId(R.id.create_note_toolbar)))).perform(click());

@@ -33,13 +33,13 @@ public class CreateAndListNotesTest {
 
     @Test
     public void testDisplayNote() {
-        Espresso.onView(withText("Suada")).check((doesNotExist()));
-        Espresso.onView(withText("Tosin")).check(matches(isDisplayed()));
+        onView(withText("MaryJane")).check((doesNotExist()));
+        onView(withText("Tosin")).check(matches(isDisplayed()));
     }
 
     @Test
     public void testAddNote() {
-        Espresso.onView(ViewMatchers.withId(R.id.fab_list)).perform(click());
+        onView(ViewMatchers.withId(R.id.fab_list)).perform(click());
         onView(withId(R.id.note_title)).perform(typeText("Eston"));
         onView(withId(R.id.note_content)).perform(typeText("Is a fellow at andela."));
         onView(allOf(instanceOf(ImageButton.class), withParent(withId(R.id.create_note_toolbar)))).perform(click());
@@ -48,22 +48,22 @@ public class CreateAndListNotesTest {
 
     @Test
     public void testDeleteNote() throws Exception{
-        Espresso.onView(ViewMatchers.withId(R.id.fab_list)).perform(click());
+        onView(ViewMatchers.withId(R.id.fab_list)).perform(click());
         onView(withId(R.id.note_title)).perform(typeText("Kenya"));
-        onView(withId(R.id.note_content)).perform(typeText("This is a lovely country."));
+        onView(withId(R.id.note_content)).perform(typeText("This is a lovely country with beautiful people."));
         onView(allOf(instanceOf(ImageButton.class), withParent(withId(R.id.create_note_toolbar)))).perform(click());
-        Espresso.onView(withText("Kenya")).perform(longClick());
+        onView(withText("Kenya")).perform(longClick());
         onView(withId(R.id.nav_trash)).perform(click());
-       Espresso.onView(withText("Kenya")).check((doesNotExist()));
+        onView(withText("Kenya")).check((doesNotExist()));
     }
 
     @Test
     public void testEditNote() throws Exception{
-        Espresso.onView(ViewMatchers.withId(R.id.fab_list)).perform(click());
+        onView(ViewMatchers.withId(R.id.fab_list)).perform(click());
         onView(withId(R.id.note_title)).perform(typeText("Android"));
         onView(withId(R.id.note_content)).perform(typeText("Testing target devices"));
         onView(allOf(instanceOf(ImageButton.class), withParent(withId(R.id.create_note_toolbar)))).perform(click());
-        Espresso.onView(withText("Android")).perform(longClick());
+        onView(withText("Android")).perform(longClick());
         onView(withId(R.id.nav_edit)).perform(click());
         onView(withId(R.id.note_content)).perform(typeText("\n Using JUnit 4."));
         onView(allOf(instanceOf(ImageButton.class), withParent(withId(R.id.create_note_toolbar)))).perform(click());
