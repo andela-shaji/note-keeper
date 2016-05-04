@@ -39,12 +39,16 @@ public class DashBoardTest {
     @Test
     public void testOnClick() throws Exception {
         ImageButton createNote = (ImageButton) dashBoardActivity.findViewById(R.id.dashboard_create_note);
-        createNote.performClick();
+        if (createNote != null) {
+            createNote.performClick();
+        }
         Intent intent = new Intent(dashBoardActivity, CreateNote.class);
         assertEquals(CreateNote.class.getCanonicalName(), intent.getComponent().getClassName());
 
         ImageButton trashNote = (ImageButton) dashBoardActivity.findViewById(R.id.dashboard_trash_note);
-        trashNote.performClick();
+        if (trashNote != null) {
+            trashNote.performClick();
+        }
         Intent trashIntent = new Intent(dashBoardActivity, Trash.class);
         assertEquals(Trash.class.getCanonicalName(), trashIntent.getComponent().getClassName());
     }

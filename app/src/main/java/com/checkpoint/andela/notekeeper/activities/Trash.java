@@ -29,11 +29,12 @@ import android.widget.Toast;
 import com.checkpoint.andela.notekeeper.R;
 import com.checkpoint.andela.notekeeper.adapter.ListNoteAdapter;
 import com.checkpoint.andela.notekeeper.helpers.ActivityLauncher;
+import com.checkpoint.andela.notekeeper.helpers.NoteView;
 import com.checkpoint.andela.notekeeper.model.NoteModel;
 
 import java.util.ArrayList;
 
-public class Trash extends ListNotes {
+public class Trash extends NoteView {
 
     private Toolbar toolbar;
     private ArrayList<NoteModel> noteModelArrayList;

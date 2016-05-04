@@ -29,6 +29,7 @@
     <string name="title_activity_settings">SettingsActivity</string>
 
     <string name="trash_note">Trash</string>
+    <string name="title_activity_note_view">NoteView</string>
 
 
 </resources>

@@ -47,7 +47,7 @@ public class CreateAndListNotesTest {
     }
 
     @Test
-    public void testDeleteNote() throws Exception{
+    public void testDeleteNote() throws Exception {
         onView(ViewMatchers.withId(R.id.fab_list)).perform(click());
         onView(withId(R.id.note_title)).perform(typeText("Kenya"));
         onView(withId(R.id.note_content)).perform(typeText("This is a lovely country with beautiful people."));
@@ -58,7 +58,7 @@ public class CreateAndListNotesTest {
     }
 
     @Test
-    public void testEditNote() throws Exception{
+    public void testEditNote() throws Exception {
         onView(ViewMatchers.withId(R.id.fab_list)).perform(click());
         onView(withId(R.id.note_title)).perform(typeText("Android"));
         onView(withId(R.id.note_content)).perform(typeText("Testing target devices"));
