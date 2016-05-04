@@ -15,22 +15,22 @@
 
     <ImageButton
         android:id="@+id/dashboard_create_note"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_alignParentLeft="true"
         android:layout_gravity="center"
         android:layout_marginLeft="120dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/create_note"
         android:paddingRight="16dp"
         android:paddingTop="50dp" />
 
     <ImageButton
         android:id="@+id/dashboard_list_notes"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_toRightOf="@id/dashboard_create_note"
         android:background="@drawable/dashboard_list_notes"
         android:paddingTop="50dp" />
@@ -38,8 +38,8 @@
 
     <ImageButton
         android:id="@+id/dashboard_settings_note"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/dashboard_create_note"
         android:layout_marginLeft="120dp"
@@ -50,8 +50,8 @@
 
     <ImageButton
         android:id="@+id/dashboard_trash_note"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_below="@+id/dashboard_list_notes"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
