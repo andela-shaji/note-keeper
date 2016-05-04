@@ -152,4 +152,10 @@ public class CreateNote extends AppCompatActivity {
         super.onDestroy();
     }
 
+    @Override
+    public void onBackPressed() {
+        createNote();
+        ActivityLauncher.runIntent(CreateNote.this, ListNotes.class);
+        finish();
+    }
 }

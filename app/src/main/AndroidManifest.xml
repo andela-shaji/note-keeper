@@ -60,12 +60,15 @@
         <activity
             android:name=".activities.AppSettings"
             android:label="@string/title_activity_app_settings"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.DashBoard" />
         </activity>
-
+        <activity
+            android:name=".helpers.NoteView"
+            android:label="@string/title_activity_note_view"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

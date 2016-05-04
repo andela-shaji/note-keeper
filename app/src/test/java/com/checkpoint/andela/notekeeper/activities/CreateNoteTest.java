@@ -24,12 +24,9 @@ import static junit.framework.Assert.assertTrue;
 public class CreateNoteTest {
     private CreateNote createNoteActivity;
 
-
-
     @Before
     public void setUp() throws Exception {
         createNoteActivity = Robolectric.buildActivity(CreateNote.class).create().get();
-
     }
 
     @Test
@@ -44,6 +41,4 @@ public class CreateNoteTest {
         activityShadow.onBackPressed();
         assertTrue(activityShadow.isFinishing());
     }
-
-
 }
