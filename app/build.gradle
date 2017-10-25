@@ -18,6 +18,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            testCoverageEnabled = true
+            //You might want to disable this if you cant debug and see variable values. Meh ¯\_(ツ)_/¯
+        }
+
     }
     lintOptions {
         abortOnError false

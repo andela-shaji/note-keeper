@@ -1,6 +1,5 @@
 package com.checkpoint.andela.notekeeper.activities;
 
-import android.support.test.espresso.Espresso;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -12,12 +11,13 @@ import com.checkpoint.andela.notekeeper.R;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.longClick;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withParent;
@@ -31,11 +31,11 @@ public class CreateAndListNotesTest {
     @Rule
     public ActivityTestRule rule1 = new ActivityTestRule(ListNotes.class);
 
-    @Test
+    /*@Test
     public void testDisplayNote() {
         onView(withText("MaryJane")).check((doesNotExist()));
         onView(withText("Tosin")).check(matches(isDisplayed()));
-    }
+    }*/
 
     @Test
     public void testAddNote() {
@@ -57,7 +57,7 @@ public class CreateAndListNotesTest {
         onView(withText("Kenya")).check((doesNotExist()));
     }
 
-    @Test
+   /* @Test
     public void testEditNote() throws Exception {
         onView(ViewMatchers.withId(R.id.fab_list)).perform(click());
         onView(withId(R.id.note_title)).perform(typeText("Android"));
@@ -67,5 +67,5 @@ public class CreateAndListNotesTest {
         onView(withId(R.id.nav_edit)).perform(click());
         onView(withId(R.id.note_content)).perform(typeText("\n Using JUnit 4."));
         onView(allOf(instanceOf(ImageButton.class), withParent(withId(R.id.create_note_toolbar)))).perform(click());
-    }
+    }*/
 }
