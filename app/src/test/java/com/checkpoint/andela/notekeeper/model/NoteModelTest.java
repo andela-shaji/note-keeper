@@ -42,7 +42,7 @@ public class NoteModelTest {
     @Test
     public void testNote_date() throws Exception {
         noteModel.setNote_date();
-        assertTrue(noteModel.getNote_date().contains("2016"));
+        assertTrue(noteModel.getNote_date().contains("2017"));
     }
 
 
