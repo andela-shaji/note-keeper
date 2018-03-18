@@ -4,7 +4,7 @@ Note Keeper is a new, comfortable and simple notepad right on your Android. It's
 
 It serves as a simple word processing program, the text option allows for as many characters as you're willing to type. Once saved, you can edit, share or delete the note through the menu button. 
 
-NoteKeeper is fast, easy, beautiful and accessible at any time. This is what you need.
+NoteKeeper is fast, easy, beautiful and accessible at any time. This is what you need. It's readily available in [Google Play Store](https://play.google.com/store/apps/details?id=com.checkpoint.andela.notekeeper).
 
 ###
 
